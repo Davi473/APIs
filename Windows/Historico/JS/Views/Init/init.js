@@ -9,6 +9,7 @@ class Dados
     {
         let valor = await this.dados.get("/acoes");
         let entrada = document.querySelector("tbody");
+        console.log(valor)
         let acoes = 1;
         for (const dado of valor) 
         {

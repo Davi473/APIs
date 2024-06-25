@@ -24,16 +24,18 @@ const acoesClient = [
     },
 ];
 
-for (const ativo in acoesClient)
+app.get("/acoes", function (req, res) 
 {
-    const temp = new Stocks(acoesClient[ativo].nome, acoesClient[ativo].ativos)
-    console.log(temp.media())
-} 
-
-
-app.get("/acoes", function (req, res) {
-    res.json(acoesClient);
+    let array = []
+    for (const ativo in acoesClient)
+    {
+        const temp = new Stocks(acoesClient[ativo].nome, acoesClient[ativo].ativos)
+        temp.organizar();
+        array.push(temp);
+    } 
+    res.json(array);
 });
+
 /*
 app.post("/adicionar", function (req, res) {
     const lancamento = (req.body);
