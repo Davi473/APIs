@@ -5,6 +5,7 @@ class Dados
         this.dados = dados;
         this.arrayDividos = [];
         this.dividendosMensais = 0;
+        this.meses = ["jan", "fev", "mar", "abr", "mai"]
         //new GraficoBarChart().init();
     }
 
@@ -21,8 +22,7 @@ class Dados
 
     porMeses(dados)
     {
-        const meses = ["jan", "fev", "mar", "abr", "mai"]
-        for (const mes of meses)
+        for (const mes of this.meses)
         {
             this.dividendosMensais = 0;
             for (let i = 0; i <= dados.dividendos[mes].length; i++)
@@ -30,6 +30,7 @@ class Dados
                 if (dados.dividendos[mes][i] != undefined)
                 {
                     this.construirTable(dados.dividendos[mes][i])
+                    this.dividendosMensais = this.dividendosMensais + dados.dividendos[mes][i].totalLiquido;
                 }
             }
             this.arrayDividos.push(this.dividendosMensais);
@@ -51,7 +52,5 @@ class Dados
                 <td>${dados.totalLiquido}</td>
             </tr>`
         )
-        this.dividendosMensais = this.dividendosMensais + dados.totalLiquido;
     }
-
 }
