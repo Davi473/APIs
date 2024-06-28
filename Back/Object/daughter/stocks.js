@@ -30,9 +30,14 @@ class Stocks
         return (this.valorTotal).toFixed(2);
     }
 
-    getMedia()
+    getMediaDaAcao()
     {
-        return this.media;
+        return {
+            nome: this.nome,
+            media: this.media,
+            valorTotal: this.valorTotal,
+            quantidade: this.quantidadeTotal
+        }
     }
 
     /*
