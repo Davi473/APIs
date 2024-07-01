@@ -21,7 +21,8 @@ class Controllers
             //valores(model);
         }
         //valores(this.model);
-        Thais.view.  
+        this.view.tabelaActiveMedia()
+        this.view.
         this.view.animacaoTabela("main");
     }
 }
