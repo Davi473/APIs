@@ -9,14 +9,40 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+
+let data = {
+    id: 1234,
+    name: "davi",
+    email: "davi@gmail.com"
+}
 app.get("/activeCurrent", function (req, res) 
 {
-    res.json(arrayTheAverageActive);
+    /*
+    let arrayActive = []
+    for(let atual in active)
+    {
+        let activeAtual = new Stocks(active[atual].nome, active[atual].ativos);
+        activeAtual.calcularMedia();
+        arrayActive.push(activeAtual.getMediaDaAcao());
+    }
+
+    res.json(arrayActive);
+    */
+   res.json(active);
 });
 
+/*
 app.get("/dividendos", function (req, res) 
 {
     res.json(historicoDividendos);
+});
+
+*/
+
+app.post("/dividendos", function (req, res) 
+{
+    console.log(res)
+    //res.json(historicoDividendos);
 });
 
 app.listen(3005, () => {

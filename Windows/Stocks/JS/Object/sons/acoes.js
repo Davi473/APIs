@@ -1,0 +1,7 @@
+class Acoes
+{
+    constructor()
+    {
+        
+    }
+}
