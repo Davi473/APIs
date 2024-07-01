@@ -16,12 +16,14 @@ class View
     tabelaCaberalio()
     {
         let tabela = `
+        <table>
             <tr>
                 <th>Nome</th>
                 <th>Quantidade</th>
                 <th>Media</th>
                 <th>Valor Total</th>
             </tr>
+        </table>
         `
         return tabela
     }
