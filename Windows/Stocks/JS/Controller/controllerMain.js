@@ -20,7 +20,8 @@ class Controllers
             }
             //valores(model);
         }
-        //valores(this.model);    
+        //valores(this.model);
+        Thais.view.  
         this.view.animacaoTabela("main");
     }
 }
