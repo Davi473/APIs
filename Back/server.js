@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-const Stocks = require("./Object/daughter/stocks")
+//const Stocks = require("./Object/daughter/stocks")
 const active = require("./ValoreBancoFiquitisios/active")
 const historicoDividendos = require("./ValoreBancoFiquitisios/historicoDividendos")
 
@@ -9,7 +9,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-
+let agora = "stocks"
 let data = {
     id: 1234,
     name: "davi",
@@ -28,7 +28,7 @@ app.get("/activeCurrent", function (req, res)
 
     res.json(arrayActive);
     */
-   res.json(active);
+   res.json(active[agora]);
 });
 
 /*
@@ -39,9 +39,10 @@ app.get("/dividendos", function (req, res)
 
 */
 
-app.post("/dividendos", function (req, res) 
+app.get("/dividendos", function (req, res) 
 {
-    console.log(res)
+    
+    agora = "fiis";
     //res.json(historicoDividendos);
 });
 

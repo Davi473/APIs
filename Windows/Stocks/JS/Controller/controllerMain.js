@@ -5,14 +5,22 @@ class Controllers
     {
         this.view = view;
         this.model = model;
+        this.init();
     }
 
-    async init()
+    init()
     {
-        let todosActive = await this.model.chamadoActive();
-        for(let active in todosActive)
+        const valores = async function(model)
         {
-            this.view.tabelaActiveMedia("main", todosActive[active])
+            let todosActive = await model.chamadoActive();
+            console.log(todosActive);
+            for(let active in todosActive)
+            {
+                //this.view.tabelaActiveMedia("main", todosActive[active])
+            }
+            //valores(model);
         }
+        //valores(this.model);    
+        this.view.animacaoTabela("main");
     }
 }
