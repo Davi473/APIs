@@ -13,7 +13,7 @@ class View
         return tabela
     }
 
-    tabelaCaberalio()
+    tabelaCaberalio(value)
     {
         let tabela = `
         <table>
@@ -23,6 +23,7 @@ class View
                 <th>Media</th>
                 <th>Valor Total</th>
             </tr>
+            ${valeu}
         </table>
         `
         return tabela
